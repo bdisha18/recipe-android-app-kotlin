@@ -88,9 +88,7 @@ class CategoryViewModel() : ViewModel() {
         return areas
     }
 
-    fun observeRecipeByAreaLiveData(): LiveData<List<RecipeByCategory>> {
-        return recipes
-    }
+
 
 
 }

@@ -11,13 +11,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.recipe_app.RecipeDetailActivity
-import com.example.recipe_app.adapter.SearchRecipeAdapter
 import com.example.recipe_app.databinding.FragmentSearchBinding
 import com.example.recipe_app.pojo.RecipeDetail
 import com.example.recipe_app.viewmodels.SearchViewModel
 
 class SearchFragment : Fragment() {
-    private lateinit var searchAdapter: SearchRecipeAdapter
     private lateinit var binding: FragmentSearchBinding
     private lateinit var searchMvvm: SearchViewModel
     private var mealId = ""
@@ -27,7 +25,6 @@ class SearchFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        searchAdapter = SearchRecipeAdapter()
         searchMvvm = ViewModelProvider(this)[SearchViewModel::class.java]
     }
 

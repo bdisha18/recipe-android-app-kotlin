@@ -66,24 +66,24 @@ class CategoryFragment : Fragment() {
         //Click Function
         onAreaClick()
         onRecipeByCategoryClick()
-        onRecipeByCategoryFavoriteClick()
+//        onRecipeByCategoryFavoriteClick()
 
     }
 
 
-    private fun onRecipeByCategoryFavoriteClick() {
-        recipeAdapter.onItemClick = {
-            recipeToSave?.let {
-                viewModel.insertRecipe(it)
-                Toast.makeText(this@CategoryFragment.requireActivity(),
-                    "Recipe Saved",
-                    Toast.LENGTH_SHORT).show()
-            }
+//    private fun onRecipeByCategoryFavoriteClick() {
+//        recipeAdapter.onItemClick = {
+//            recipeToSave?.let {
+//                viewModel.insertRecipe(it)
+//                Toast.makeText(this@CategoryFragment.requireActivity(),
+//                    "Recipe Saved",
+//                    Toast.LENGTH_SHORT).show()
+//            }
+//
+//        }
+//    }
 
-        }
-    }
-
-    private var recipeToSave: RecipeDetail? = null
+//    private var recipeToSave: RecipeDetail? = null
 
     private fun onRecipeByCategoryClick() {
         recipeAdapter.onItemClick = { recipeByCategory ->
