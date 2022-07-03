@@ -38,7 +38,7 @@ class RecipeDetailActivity : AppCompatActivity() {
         binding = ActivityRecipeDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.youtubeBtn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.red)
+        binding.youtubeBtn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.orange)
 
 
 //        recipeViewModel = ViewModelProvider(this)[RecipeViewModel::class.java]
