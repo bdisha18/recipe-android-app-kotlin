@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17591973244147158" />
         <entry key="app/src/main/res/drawable/black_border_bg.xml" value="0.17430555555555555" />
         <entry key="app/src/main/res/drawable/bottom_nav_icon_color.xml" value="0.22685185185185186" />
         <entry key="app/src/main/res/drawable/category_card_background.xml" value="0.21481481481481482" />
         <entry key="app/src/main/res/drawable/dropdown_selector_bg.xml" value="0.17430555555555555" />
         <entry key="app/src/main/res/drawable/grey_rounded_bg.xml" value="0.17430555555555555" />
         <entry key="app/src/main/res/drawable/ic_baseline_bookmark_border_24.xml" value="0.17430555555555555" />
+        <entry key="app/src/main/res/drawable/ic_baseline_category_24.xml" value="0.17591973244147158" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.17591973244147158" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.12453703703703704" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.21481481481481482" />
+        <entry key="app/src/main/res/drawable/ic_baseline_view_list_24.xml" value="0.17591973244147158" />
         <entry key="app/src/main/res/drawable/orange_rounded_botton.xml" value="0.2273972602739726" />
         <entry key="app/src/main/res/drawable/search_box.xml" value="0.21481481481481482" />
         <entry key="app/src/main/res/drawable/video_bg.xml" value="0.17430555555555555" />
@@ -25,6 +29,7 @@
         <entry key="app/src/main/res/layout/activity_recipe_by_category.xml" value="0.16555183946488294" />
         <entry key="app/src/main/res/layout/activity_recipe_by_category_adapter.xml" value="0.22916666666666666" />
         <entry key="app/src/main/res/layout/activity_recipe_detail.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_search_recipe_adapter.xml" value="0.1581081081081081" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.2578125" />
@@ -33,7 +38,7 @@
         <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_recipe_list.xml" value="0.24322916666666666" />
-        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2578125" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_shopping_list.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/fragment_shopping_list2.xml" value="0.17010309278350516" />
         <entry key="app/src/main/res/menu/btm_menu.xml" value="0.2578125" />

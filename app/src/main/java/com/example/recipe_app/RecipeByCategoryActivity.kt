@@ -15,6 +15,7 @@ class RecipeByCategoryActivity : AppCompatActivity() {
     lateinit var binding: ActivityRecipeByCategoryBinding
     lateinit var categoryViewmodel: CategoryViewModel
     lateinit var recipeByCategoryAdapter: RecipeByCategoryAdapter
+    private var categoryname = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,12 +27,11 @@ class RecipeByCategoryActivity : AppCompatActivity() {
 
         categoryViewmodel = ViewModelProvider(this)[CategoryViewModel::class.java]
 
-        val category =
-            categoryViewmodel.getRecipeByCategory(intent.getStringExtra(HomeFragment.CATEGORY_NAME)!!)
+        categoryViewmodel.getRecipeByCategory(intent.getStringExtra(HomeFragment.CATEGORY_NAME)!!)
 
         categoryViewmodel.observeRecipeByCategoryLiveData().observe(this, Observer { recipeList ->
             binding.recipeCount.text = recipeList.size.toString()
-            binding.categoryName.text = category.toString()
+            binding.categoryName.text = intent.getStringExtra(HomeFragment.CATEGORY_NAME)!!
             recipeByCategoryAdapter.setRecipesByCategory(recipeList)
         })
     }

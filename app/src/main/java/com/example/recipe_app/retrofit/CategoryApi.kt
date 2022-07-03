@@ -17,7 +17,7 @@ interface CategoryApi {
     fun getPopularRecipes(@Query("c") categoryname: String): Call<RecipeByCategoryList>
 
     @GET("list.php")
-    fun getArea(): Call<AreaList>
+    fun getArea(@Query("a") areaName: String): Call<AreaList>
 
     @GET("filter.php")
     fun getRecipeByArea(@Query("a") areaName: String): Call<RecipeByCategoryList>
@@ -27,5 +27,8 @@ interface CategoryApi {
 
     @GET("lookup.php?")
     fun getRecipeDetail(@Query("i") id: String): Call<RecipeDetailList>
+
+    @GET("search.php?")
+    fun getMealByName(@Query("s") s: String): Call<RecipeDetailList>
 
 }

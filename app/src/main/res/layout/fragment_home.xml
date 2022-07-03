@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="20dp"
+    android:id="@+id/homeFragment"
     android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
@@ -44,15 +45,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
+        app:cardUseCompatPadding="true"
         app:cardCornerRadius="10dp">
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
             android:layout_width="match_parent"
+            android:id="@+id/search_view"
             android:layout_height="wrap_content"
             android:background="@drawable/search_box"
             android:theme="@style/ThemeOverlay.Search"
-            app:iconifiedByDefault="false"
+            android:clickable="true"
+            android:focusable="true"
+            app:iconifiedByDefault="true"
             app:queryHint="Search Recipes..." />
 
     </androidx.cardview.widget.CardView>
@@ -77,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Recipes By Category"
+        android:text="Recipe's Category"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold" />

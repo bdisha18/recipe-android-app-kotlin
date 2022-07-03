@@ -90,7 +90,7 @@ class RecipeDetailActivity : AppCompatActivity() {
                         category.text = "${meal!!.strCategory}"
                         instruction.text = meal.strInstructions
                         instruction.movementMethod = ScrollingMovementMethod() //Scrollbar
-                        area.text = "${meal!!.strArea}"
+                        area.text = meal.strArea
                         youtubeLink = meal.strYoutube.toString()
                     }
 

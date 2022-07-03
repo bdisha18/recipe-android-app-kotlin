@@ -38,12 +38,12 @@ class RecipeByCategoryAdapter :
         }
 
         holder.itemView.setOnClickListener {
-            onItemClick!!.invoke(recipeList[position])
+            onItemClick.invoke(recipeList[position])
 
         }
 
         holder.binding.recipeFavorites.setOnClickListener {
-            onItemClick!!.invoke(recipeList[position])
+            onItemClick.invoke(recipeList[position])
         }
 
 

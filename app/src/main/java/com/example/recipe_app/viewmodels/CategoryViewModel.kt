@@ -22,12 +22,10 @@ class CategoryViewModel() : ViewModel() {
 
 
     fun getAreas() {
-        RetrofitInstance.api.getArea().enqueue(object : Callback<AreaList> {
+        RetrofitInstance.api.getArea("list").enqueue(object : Callback<AreaList> {
             override fun onResponse(call: Call<AreaList>, response: Response<AreaList>) {
-                response.body()?.let { mealsList ->
-                    areas.postValue(mealsList.areas)
-                    Log.d("hhh", mealsList.toString())
-
+                if (response.body() != null) {
+                    areas.value = response.body()!!.meals
                 }
             }
 
@@ -45,7 +43,7 @@ class CategoryViewModel() : ViewModel() {
 
                 override fun onResponse(
                     call: Call<RecipeByCategoryList>,
-                    response: Response<RecipeByCategoryList>
+                    response: Response<RecipeByCategoryList>,
                 ) {
                     response.body()?.let { mealsList ->
                         recipes.postValue(mealsList.meals)
@@ -61,23 +59,26 @@ class CategoryViewModel() : ViewModel() {
             })
     }
 
-//      fun getRecipeByArea(areaName: String){
-//          RetrofitInstance.api.getRecipeByArea(areaName).enqueue(object :Callback<RecipeByCategoryList>{
-//
-//              override fun onResponse(call: Call<RecipeByCategoryList>, response: Response<RecipeByCategoryList>) {
-//                  response.body()?.let { areaList->
-//                      recipes.postValue(areaList.meals)
-//
-//                  }
-//              }
-//
-//
-//              override fun onFailure(call: Call<RecipeByCategoryList>, t: Throwable) {
-//                  Log.d("Category Fragment", t.message.toString())
-//              }
-//
-//          })
-//      }
+    fun getRecipeByArea(areaName: String) {
+        RetrofitInstance.api.getRecipeByArea(areaName)
+            .enqueue(object : Callback<RecipeByCategoryList> {
+
+                override fun onResponse(
+                    call: Call<RecipeByCategoryList>,
+                    response: Response<RecipeByCategoryList>,
+                ) {
+                    if (response.body() != null) {
+                        recipes.value = response.body()!!.meals
+                    }
+                }
+
+
+                override fun onFailure(call: Call<RecipeByCategoryList>, t: Throwable) {
+                    Log.d("Category Fragment", t.message.toString())
+                }
+
+            })
+    }
 
     fun observeRecipeByCategoryLiveData(): LiveData<List<RecipeByCategory>> {
         return recipes

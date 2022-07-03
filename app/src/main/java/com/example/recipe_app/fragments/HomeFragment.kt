@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipe_app.MainActivity
+import com.example.recipe_app.R
 import com.example.recipe_app.RecipeByCategoryActivity
 import com.example.recipe_app.RecipeDetailActivity
 import com.example.recipe_app.adapter.CategoryListAdapter
@@ -61,8 +63,12 @@ class HomeFragment : Fragment() {
         prepareCategoryRecyclerView()
         onCategoryClick()
 
+        binding.searchView.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
 
     }
+
 
     private fun onCategoryClick() {
         categoryListAdapter.onItemClick = { category ->
@@ -94,7 +100,7 @@ class HomeFragment : Fragment() {
 
     private fun prepareCategoryRecyclerView() {
         categoryListAdapter = CategoryListAdapter()
-        binding.editorRecyclerView.apply {
+        binding.recyclerView.apply {
             layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
             adapter = categoryListAdapter
         }

@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.recipe_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:fullBackupContent="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".adapter.SearchRecipeAdapter"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".RecipeByCategoryActivity"
             android:exported="false" />
         <activity
             android:name=".adapter.AreaListAdapter"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
-            android:name=".adapter.PopularRecipesListAdapter"
-            android:exported="false" />
+            android:name="adapter.PopularRecipesListAdapter"
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".adapter.FavoritesListAdapter"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

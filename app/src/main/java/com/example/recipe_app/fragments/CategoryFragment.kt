@@ -2,10 +2,10 @@ package com.example.recipe_app.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -60,31 +60,33 @@ class CategoryFragment : Fragment() {
         categoryViewModel.getAreas()
         observeAreas()
         prepareAreasRecyclerView()
+
         observeRecipes()
         prepareRecipeByCategoryRecyclerView()
         //Click Function
         onAreaClick()
         onRecipeByCategoryClick()
-//        onRecipeByCategoryFavoriteClick()
+        onRecipeByCategoryFavoriteClick()
 
     }
 
 
-//    private fun onRecipeByCategoryFavoriteClick() {
-//        recipeAdapter.onItemClick = {
-//            recipeToSave?.let {
-//                viewModel.insertRecipe(it)
-//                Toast.makeText(this@CategoryFragment.requireActivity(), "Recipe Saved", Toast.LENGTH_SHORT).show()
-//            }
-//
-//        }
-//    }
+    private fun onRecipeByCategoryFavoriteClick() {
+        recipeAdapter.onItemClick = {
+            recipeToSave?.let {
+                viewModel.insertRecipe(it)
+                Toast.makeText(this@CategoryFragment.requireActivity(),
+                    "Recipe Saved",
+                    Toast.LENGTH_SHORT).show()
+            }
+
+        }
+    }
 
     private var recipeToSave: RecipeDetail? = null
 
     private fun onRecipeByCategoryClick() {
         recipeAdapter.onItemClick = { recipeByCategory ->
-            Log.d("hello", "hii")
             val intent = Intent(activity, RecipeDetailActivity::class.java)
             intent.putExtra(RECIPE_ID, recipeByCategory.idMeal)
             intent.putExtra(RECIPE_NAME, recipeByCategory.strMeal)
@@ -95,9 +97,9 @@ class CategoryFragment : Fragment() {
     }
 
     private fun onAreaClick() {
-//        areaListAdapter.onItemClick = { area ->
-//            categoryViewModel.getRecipeByArea(area.strArea)
-//        }
+        areaListAdapter.onItemClick = { area ->
+            categoryViewModel.getRecipeByArea(area.strArea)
+        }
     }
 
     private fun prepareRecipeByCategoryRecyclerView() {
